@@ -1,0 +1,23 @@
+import nltk 
+from nltk.corpus import stopwords 
+from nltk.stem import PorterStemmer, WordNetLemmatizer 
+from nltk.tokenize import word_tokenize 
+ 
+nltk.download('punkt') 
+nltk.download('stopwords') 
+nltk.download('wordnet') 
+ 
+text = "Natural Language Processing is an exciting field of AI." 
+ 
+# Tokenize & remove stopwords 
+tokens = word_tokenize(text) 
+clean = [w for w in tokens if w.lower() not in stopwords.words('english')] 
+ 
+# Stemming & Lemmatization 
+stemmed = [PorterStemmer().stem(w) for w in clean] 
+lemmatized = [WordNetLemmatizer().lemmatize(w) for w in clean] 
+ 
+print("Tokens: ",tokens) 
+print("Cleaned: ",clean) 
+print("Stemmed: ",stemmed) 
+print("Lemmatized: ",lemmatized)
