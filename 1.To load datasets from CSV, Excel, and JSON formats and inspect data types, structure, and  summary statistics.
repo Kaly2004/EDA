@@ -1,0 +1,10 @@
+import pandas as pd 
+# Load datasets 
+csv_data = pd.read_csv("data.csv") 
+excel_data = pd.read_excel("data.xlsx") 
+json_data = pd.read_json("data.json") 
+ 
+# Inspect structure 
+print(csv_data.head()) 
+print(csv_data.info()) 
+print(csv_data.describe())
