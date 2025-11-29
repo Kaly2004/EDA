@@ -1,0 +1,39 @@
+import pandas as pd 
+import seaborn as sns 
+import matplotlib.pyplot as plt 
+data = { 
+    'total_bill': [20, 35, 15, 40, 25, 30, 50, 22, 18, 28], 
+    'tip':        [3, 5, 2, 6, 4, 5, 7, 3, 2, 4], 
+    'day':        ['Sun', 'Sun', 'Sat', 'Sat', 'Fri', 'Fri', 'Thur', 'Thur', 'Sun', 'Sat'] 
+} 
+df = pd.DataFrame(data) 
+ 
+#Histogram 
+plt.figure() 
+sns.histplot(df['total_bill']) 
+plt.title("Histogram of Total Bill") 
+plt.xlabel("Total Bill") 
+plt.ylabel("Frequency") 
+ 
+#Boxplot 
+plt.figure() 
+sns.boxplot(y=df['tip']) 
+plt.title("Boxplot of Tip") 
+plt.ylabel("Tip Amount") 
+ 
+#Barplot 
+plt.figure() 
+sns.barplot(x='day', y='total_bill', data=df) 
+plt.title("Average Total Bill by Day") 
+plt.xlabel("Day") 
+plt.ylabel("Average Total Bill") 
+ 
+#scatter_plot 
+plt.figure() 
+sns.scatterplot(x='total_bill', y='tip', data=df) 
+plt.title("Scatter Plot: Total Bill vs Tip") 
+plt.xlabel("Total Bill") 
+plt.ylabel("Tip") 
+ 
+plt.show() 
+ 
