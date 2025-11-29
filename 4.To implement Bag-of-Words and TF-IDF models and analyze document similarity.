@@ -1,0 +1,15 @@
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer 
+from sklearn.metrics.pairwise import cosine_similarity 
+ 
+docs = [ 
+    "Data science is fun", 
+    "Machine learning is part of data science", 
+    "Python is used in data science" 
+] 
+bow = CountVectorizer().fit_transform(docs).toarray() 
+tfidf = TfidfVectorizer().fit_transform(docs).toarray() 
+similarity = cosine_similarity(tfidf) 
+ 
+print("Bag of words:\n\n",bow) 
+print("TF-IDF:\n\n",tfidf) 
+print("Similarity: \n\n",similarity)
